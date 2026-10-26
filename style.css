@@ -1,247 +1,166 @@
-/* ===== 1. Variables CSS (tu paleta) ===== */
+/* ===== Variables CSS3  ===== */
 :root {
-    --color-bg: #FAF7F2;
-    --color-text: #2D3142;
-    --color-primary: #2D3142;
-    --color-secondary: #4F6D7A;
-    --color-section-bg: #E4EAEE;
-    --color-accent: #EF8354;
-    --color-footer-bg: #3A4356;
-    --color-footer-text: #FAF7F2;
+    --color-bg: #F4F8FF;
+    --color-text: #0A2540;
+    --color-primary: #0B3C8C;
+    --color-blue-mid: #2F80ED;
+    --color-secondary: #1D4ED8;
+    --color-section-bg: #E3EFFF;
+    --color-accent: #FF6B35;
+    --color-card: #FFFFFF;
+    --color-footer-bg: #0A2540;
+    --color-footer-text: #F4F8FF;
+
+    /* Bloques de color: escala de azules (de claro a más intenso) */
+    --bloque-conceptos: #E3EFFF;
+    --bloque-casos: #C6DDFF;
+    --bloque-tutoriales: #A8CBFF;
+    --bloque-noticias: #8BB8F8;
+    --bloque-contador: #6FA3EE;
 }
- 
-*, *::before, *::after { box-sizing: border-box; }
- 
-body{
+
+html { scroll-behavior: smooth; }
+
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--color-bg);
     color: var(--color-text);
-    margin: 0;
-    line-height: 1.6;
 }
- 
-/* ===== Encabezado: degradado + tipografía fluida (clamp) ===== */
-header{
-    background: linear-gradient(135deg, var(--color-primary), var(--color-footer-bg));
+
+/* ===== Navbar (Bootstrap + tu paleta) ===== */
+.navbar { background-color: var(--color-primary); }
+.navbar .nav-link { color: var(--color-footer-text); transition: color 0.2s ease; }
+.navbar .nav-link:hover { color: var(--color-accent); }
+
+/* ===== Encabezado: degradado + tipografía fluida ===== */
+.hero {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-blue-mid));
     color: var(--color-footer-text);
-    text-align: center;
-    padding: clamp(20px, 5vw, 40px);
+    padding: clamp(40px, 8vw, 90px) 0;
 }
- 
-header h1{
-    margin: 0;
-    font-size: clamp(1.4rem, 5vw, 2rem);
-    letter-spacing: 0.5px;
-}
- 
-header p{
-    color: var(--color-footer-text);
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    margin: 8px auto 0;
-    max-width: 800px;
-}
- 
-/* ===== 2. Flexbox: navegación ===== */
-nav{
-    display: flex;
-    flex-direction: column;      /* celular: enlaces apilados */
-    align-items: center;
-    gap: 4px;
-    padding: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: var(--color-bg);
-    box-shadow: 0 2px 6px rgba(45, 49, 66, 0.12);
-}
- 
-nav a{
-    text-decoration: none;
-    padding: 8px 16px;
-    color: var(--color-secondary);
-    font-size: 1.1rem;
-    border-radius: 8px;
-    transition: color 0.2s ease, background-color 0.2s ease;
-}
- 
-nav a:hover{
-    color: var(--color-accent);
+.hero h1 { font-size: clamp(1.8rem, 6vw, 3rem); }
+.hero .lead { max-width: 800px; font-size: clamp(1rem, 2.5vw, 1.25rem); }
+
+/* ===== Secciones ===== */
+.seccion {
     background-color: var(--color-section-bg);
-}
- 
-/* ===== Secciones (mobile first: una sola columna) ===== */
-section{
     text-align: center;
-    background-color: var(--color-section-bg);
+    padding: clamp(32px, 6vw, 70px) 0;
+    scroll-margin-top: 70px;   /* la barra fija no tapa los títulos */
+}
+
+.titulo {
     color: var(--color-text);
-    padding: 24px 16px;
-    scroll-margin-top: 90px;     /* el menú fijo no tapa el título */
-}
- 
-section h2{
-    color: var(--color-primary);
-    font-size: clamp(1.25rem, 4vw, 1.625rem);
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
     border-bottom: 3px solid var(--color-accent);
-    display: block;
+    display: inline-block;
     padding-bottom: 6px;
-    margin: 0 0 20px;
+    margin-bottom: 28px;
 }
- 
-section img{
-    display: block;
-    margin: 0 auto 20px auto;
-}
- 
-/* ===== Imágenes: flexibles, con sombra y efecto hover ===== */
-img{
-    width: 80%;
-    max-width: 320px;
-    height: auto;
+
+/* ===== Bloques de color ===== */
+#conceptos        { background-color: var(--bloque-conceptos); }
+#casos            { background-color: var(--bloque-casos); }
+#tutoriales       { background-color: var(--bloque-tutoriales); }
+#noticias         { background-color: var(--bloque-noticias); }
+.contador-seccion { background-color: var(--bloque-contador); }
+
+.badge { background-color: var(--color-primary) !important; color: #fff !important; }
+.alert { border-color: var(--color-accent) !important; }
+
+/* ===== Imágenes ===== */
+.imagen {
+    width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 10%;
     box-shadow: 0 4px 12px rgba(45, 49, 66, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
- 
-img:hover{
-    transform: scale(1.04);
-    box-shadow: 0 10px 24px rgba(45, 49, 66, 0.3);
-}
- 
-footer{
-    text-align: center;
-    padding: 20px;
-    background-color: var(--color-footer-bg);
-    color: var(--color-footer-text);
-    margin-top: 60px;
-}
+.imagen:hover { transform: scale(1.03); box-shadow: 0 10px 24px rgba(45, 49, 66, 0.3); }
 
-/* ==== Botón Hacer Click ==== */
-
-.contador-seccion{
-    text-align: center;
-}
- 
-.contador-box h2#numero{
-    color: var(--color-primary);
-}
- 
-#btn-contador{
-    background-color: var(--color-secondary);
-    color: var(--color-footer-text);
+/* ===== Tarjetas, acordeón y lista (Bootstrap) ===== */
+.tarjeta {
     border: none;
-    padding: 14px 32px;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
+    border-top: 4px solid var(--color-accent);
+    border-radius: 14px;
+    background-color: var(--color-card);
+    box-shadow: 0 2px 8px rgba(45, 49, 66, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
- 
-#btn-contador:hover{
-    background-color: var(--color-primary);
-    transform: translateY(-2px);
-}
- 
-#btn-contador:active{
-    transform: translateY(0);
-}
- 
-/* ===== Modo oscuro - contador ===== */
+.tarjeta:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(45, 49, 66, 0.2); }
 
-body.oscuro .contador-box h2#numero{
-    color: var(--color-accent);
+.accordion {
+    --bs-accordion-active-bg: var(--color-card);
+    --bs-accordion-active-color: var(--color-primary);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(239, 131, 84, 0.35);
 }
- 
-body.oscuro #btn-contador{
+
+/* ===== Botones ===== */
+.btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    font-weight: 600;
+    border: none;
+    border-radius: 999px;
+    padding-inline: 2rem;
+    box-shadow: 0 4px 10px rgba(45, 49, 66, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-accent:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(45, 49, 66, 0.3);
+}
+.btn-accent:active { transform: scale(0.96); }
+
+/* Contador */
+#numero { color: var(--color-text); font-size: 3rem; margin-bottom: 16px; }
+
+/* ===== Pie de página ===== */
+footer {
+    text-align: center;
+    padding: 24px;
     background-color: var(--color-footer-bg);
     color: var(--color-footer-text);
 }
- 
-body.oscuro #btn-contador:hover{
-    background-color: var(--color-accent);
-    color: var(--color-primary);
+
+/* ===== Responsivo extra ===== */
+@media (max-width: 767.98px) {
+    .imagen { max-width: 420px; display: block; margin: 0 auto; }
 }
 
-/* ===== Media queries ===== */
- 
-/* Tablet: menú en fila */
-@media (min-width: 600px){
-    nav{
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px 20px;
-    }
- 
-    section{
-        padding: 40px 32px;
-    }
- 
-    section h2{
-        display: inline-block;
-    }
-}
- 
-/* Computadora: sección en 2 columnas con CSS Grid */
-@media (min-width: 900px){
-    section{
-        padding: 60px max(32px, calc((100% - 1000px) / 2));
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas:
-            "titulo titulo"
-            "imagen texto";
-        gap: 20px 40px;
-        align-items: center;
-    }
- 
-    /* Secciones pares: la imagen pasa a la derecha */
-    section:nth-of-type(even){
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas:
-            "titulo titulo"
-            "texto imagen";
-    }
- 
-    section h2{
-        grid-area: titulo;
-        justify-self: center;
-        display: inline-block;
-    }
- 
-    section img{
-        grid-area: imagen;
-        width: 100%;
-        max-width: none;
-        margin: 0;
-    }
- 
-    section p{
-        grid-area: texto;
-        text-align: left;
-        font-size: 1.1rem;
-        margin: 0;
-    }
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
 }
 
-/* Sección del contador: centrada, sin las dos columnas */
-body section.contador-seccion{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+/* Imágenes dentro de las tarjetas */
+.tarjeta .card-img-top {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;      /* espacio entre la imagen y el título */
+    border-radius: 10px;
 }
 
-/* Número: sin el subrayado heredado de "section h2" */
-.contador-seccion h2#numero{
-    color: var(--color-primary);
-    border-bottom: none;
-    margin: 0;
-}
 
-/* Modo oscuro */
-body.oscuro .contador-seccion h2#numero{
+.list-group-item a {
+    color: var(--color-text);
+    font-weight: 400;
+    text-decoration: none;
+}
+.list-group-item a:hover {
     color: var(--color-accent);
+}
+
+a.alert {
+    display: block;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+a.alert:hover {
+    background-color: var(--color-card);
+    transform: translateX(6px);
 }
