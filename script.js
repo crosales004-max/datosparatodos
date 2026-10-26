@@ -1,5 +1,5 @@
 /*---Saludo---*/
-console.log("Bienvenido a Data Science Project");
+console.log("Bienvenido a Datos para Todos");
 
 const numero = document.getElementById("numero");
 const btnContador = document.getElementById("btn-contador");
