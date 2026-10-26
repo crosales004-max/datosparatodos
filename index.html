@@ -1,70 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Data Science Project</title>
-        <link rel="stylesheet" href="./style.css">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos para Todos</title>
+    <!-- Bootstrap 5 (CSS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS (CSS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Tus estilos (van al final para ganar sobre Bootstrap) -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
 
-    <body>
-        <header>
-            <h1 data-aos="fade-down" data-aos-duration="1500">Data Science Project</h1>        
-            <p data-aos="fade-up" data-aos-duration="1500" class="subtitulo">La ciencia de datos no es solo tecnología: es una herramienta para entender 
+    <!-- Bootstrap: barra de navegación responsiva -->
+    <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#inicio">Datos para Todos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#conceptos">Conceptos de la ciencia de datos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#casos">Casos de aplicación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tutoriales">Tutoriales</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#noticias">Noticias</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero text-center">
+        <div class="container" data-aos="fade-down" data-aos-duration="1200">
+            <h1 class="display-5 fw-bold">Datos para Todos</h1>
+            <p class="lead mx-auto">La ciencia de datos no es solo tecnología: es una herramienta para entender
                y mejorar nuestra sociedad. Descubre casos de aplicación, aprende con tutoriales
                y mantente al día con las últimas noticias del campo.</p>
-        </header>
+            <a href="#casos" class="btn btn-accent btn-lg mt-2">Explorar casos</a>
+        </div>
+    </header>
 
-        <nav>
-            <a href="#conceptos">Conceptos de la ciencia de datos</a>
-            <a href="#casos">Casos de aplicación</a>
-            <a href="#tutoriales">Tutoriales</a>
-            <a href="#noticias">Noticias</a>
-        </nav>
-        <section id="conceptos">
-            <h2 data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">Conceptos de la ciencia de datos</h2>
-            <img src="./img/concepts.jpg" alt="Conceptos">
-            <p>Aquí encontrarás los conceptos más utilizados en esta disciplina.</p>
+    <main>
+        <!-- CONCEPTOS -->
+        <section id="conceptos" class="seccion">
+            <div class="container">
+                <h2 class="titulo" data-aos="fade-up" >Conceptos de la ciencia de datos</h2>
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-5">
+                        <img src="./img/concepts.jpg" class="img-fluid imagen" alt="Conceptos de ciencia de datos">
+                    </div>
+                    <div class="col-md-7 text-start">
+                        <p>Aquí encontrarás los conceptos más utilizados en esta disciplina.</p>
+                        <!-- Bootstrap: acordeón -->
+                        <div class="accordion" id="acordeonConceptos">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1">¿Qué es la ciencia de datos?</button>
+                                </h3>
+                                <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#acordeonConceptos">
+                                    <div class="accordion-body">Disciplina que combina estadística, programación y conocimiento del área para extraer información útil de los datos.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">Proceso: CRISP-DM y KDD</button>
+                                </h3>
+                                <div id="c2" class="accordion-collapse collapse" data-bs-parent="#acordeonConceptos">
+                                    <div class="accordion-body">Metodologías que ordenan el trabajo en etapas: entender el problema, preparar los datos, modelar, evaluar y utilizar los resultados.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3">El científico de datos</button>
+                                </h3>
+                                <div id="c3" class="accordion-collapse collapse" data-bs-parent="#acordeonConceptos">
+                                    <div class="accordion-body">Perfil que analiza datos, programa y comunica resultados para apoyar la toma de decisiones.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="casos">
-            <h2 data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">Casos de aplicación</h2>
-            <img src="./img/aplicacion.jpg" alt="Casos de aplicación">
-            <p>La ciencia de datos permite identificar patrones de desigualdad social mediante 
-                el análisis de grandes volúmenes de información, aquí encontrarás casos de aplicación 
-                enfocados en políticas públicas, salud pública y movilidad urbana.
-            </p>
+        <!-- CASOS DE APLICACIÓN -->
+        <section id="casos" class="seccion">
+            <div class="container">
+                <h2 class="titulo" data-aos="fade-up">Casos de aplicación</h2>
+                <div class="row g-4 align-items-center flex-md-row-reverse">
+                    <div class="col-md-5">
+                        <img src="./img/aplicacion.jpg" class="img-fluid imagen" alt="Casos de aplicación">
+                    </div>
+                    <div class="col-md-7 text-start">
+                        <p>La ciencia de datos permite identificar patrones de desigualdad social mediante
+                           el análisis de grandes volúmenes de información, aquí encontrarás casos de aplicación
+                           enfocados en políticas públicas, salud pública y movilidad urbana.</p>
+                    </div>
+                </div>
+
+                <!-- Bootstrap: tarjetas en cuadrícula -->
+                <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+                    <div class="col"><div class="card h-100 tarjeta text-start">
+                        <div class="card-body">
+                            <img src="./img/politics.png" class="card-img-top" alt="Políticas">
+                            <h3 class="card-title h5">Políticas públicas</h3>
+                            <p class="card-text">Evaluar qué programas funcionan y dónde se necesitan más recursos.</p>
+                        </div></div></div>
+                    <div class="col"><div class="card h-100 tarjeta text-start">
+                        <div class="card-body">
+                            <img src="./img/salud.jpg" class="card-img-top" alt="Salud pública">
+                            <h3 class="card-title h5">Salud pública</h3>
+                            <p class="card-text">Detectar patrones y anticipar necesidades de atención en la población.</p>
+                        </div></div></div>
+                    <div class="col"><div class="card h-100 tarjeta text-start">
+                        <div class="card-body">
+                            <img src="./img/movilidad.jpg" class="card-img-top" alt="Movilidad">
+                            <h3 class="card-title h5">Movilidad urbana</h3>
+                            <p class="card-text">Entender cómo se mueve la gente para mejorar el transporte en la ciudad.</p>
+                        </div></div></div>
+                </div>
+            </div>
         </section>
 
-        <section id="tutoriales">
-            <h2 data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">Tutoriales</h2>
-            <img src="./img/tutoriales.jpg" alt="Tuturiales">
-            <p>En esta sección podrás encontrar tutoriales para replicar en tus propios proyectos 
-                de ciencia de datos.
-            </p>
+        <!-- TUTORIALES -->
+        <section id="tutoriales" class="seccion">
+            <div class="container">
+                <h2 class="titulo" data-aos="fade-up">Tutoriales</h2>
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-5">
+                        <img src="./img/tutoriales.jpg" class="img-fluid imagen" alt="Tutoriales">
+                    </div>
+                    <div class="col-md-7 text-start">
+                        <p>En esta sección podrás encontrar tutoriales para replicar en tus propios proyectos
+                           de ciencia de datos.</p>
+                        <!-- Bootstrap: lista con insignias -->
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="https://www.shedata.tech/roadmap/python" target="_blank" rel="noopener" class="stretched-link">
+                                    Primeros pasos con Python para datos
+                                </a>
+                                <span class="badge">Empezar roadmap</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="https://www.shedata.tech/roadmap/sql" target="_blank" rel="noopener" class="stretched-link">
+                                    Primeros pasos con SQL
+                                </a>
+                                <span class="badge">Empezar roadmap</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="https://www.youtube.com/playlist?list=PLat2DtY8K7YWB3X5oJiXb5qON0rA3j0J6" target="_blank" rel="noopener" class="stretched-link">
+                                    Visualización de datos con Python
+                                </a>
+                                <span class="badge">Empezar tutorial</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
-            <section id="noticias">
-            <h2 data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">Noticias</h2>
-            <img src="./img/noticias.jpg" alt="Noticias">
-            <p>Las últimas noticias relacionadas con la ciencia de datos.</p>
+        <!-- NOTICIAS -->
+        <section id="noticias" class="seccion">
+            <div class="container">
+                <h2 class="titulo" data-aos="fade-up">Noticias</h2>
+                <div class="row g-4 align-items-center flex-md-row-reverse">
+                    <div class="col-md-5">
+                        <img src="./img/noticias.jpg" class="img-fluid imagen" alt="Noticias">
+                    </div>
+                    <div class="col-md-7 text-start">
+                        <p>Las últimas noticias relacionadas con la ciencia de datos.</p>
+                        <!-- Bootstrap: alerta -->
+                        <ul class="list-unstyled d-grid gap-2 mb-0">
+                            <li>
+                                <a href="https://www.jornada.com.mx/2026/08/19/deportes/a10n1dep" target="_blank" rel="noopener"
+                                class="alert alert-light border-start border-4 border-warning mb-0">
+                                    <strong>La ciencia de datos impulsa a equipos campeones en México</strong><br>
+                                    <small>La Jornada · Ago 2026</small>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.itnow.connectab2b.com/post/modelos-de-lenguaje-oportunidades-y-desaf%C3%ADos-para-la-ciencia-de-datos" target="_blank" rel="noopener"
+                                class="alert alert-light border-start border-4 border-warning mb-0">
+                                    <strong>Modelos de lenguaje: oportunidades y desafíos para la ciencia de datos</strong><br>
+                                    <small>IT Now · Jun 2026</small>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://hbr.org/2022/07/is-data-scientist-still-the-sexiest-job-of-the-21st-century?language=es" target="_blank" rel="noopener"
+                                class="alert alert-light border-start border-4 border-warning mb-0">
+                                    <strong>¿Sigue siendo el científico de datos el trabajo más sexy del siglo XXI?</strong><br>
+                                    <small>Harvard Business Review · Jul 2022</small>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="seccion contador-seccion">
-            <h2 data-aos="zoom-in-down" id="numero">0</h2>
-            <button data-aos="zoom-in-down" id="btn-contador" type="button">Hacer clic</button>
+        <!-- BOTÓN "HACER CLIC" -->
+        <section class="seccion contador-seccion text-center">
+            <div class="container">
+                <h2 id="numero">0</h2>
+                <button id="btn-contador" type="button" class="btn btn-accent btn-lg">Hacer clic</button>
+            </div>
         </section>
+    </main>
 
-        <footer>
-            <p>Data Science Project</p>
-            <p>Claudia Rosales</p>
-        </footer>
-
-    </body>
+    <footer>
+        <p class="mb-1">Data Science Project | &copy; 2026 Claudia Rosales</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS (JS) e inicialización -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <script>AOS.init();</script>
     <script src="./script.js"></script>
+</body>
 </html>
