@@ -19,13 +19,24 @@
     --bloque-contador: #6FA3EE;
 }
 
-html { scroll-behavior: smooth; }
+:root {
+    --fuente-titulos: ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS", "Segoe UI", sans-serif;
+    --fuente-texto: "Trebuchet MS", "Segoe UI", Tahoma, Verdana, sans-serif;
+    --bs-body-font-family: var(--fuente-texto);   /* para que Bootstrap use la misma fuente */
+}
 
 body {
-    font-family: Barlow Condensed;
-    background-color: var(--color-bg);
-    color: var(--color-text);
+    font-family: var(--fuente-texto);
 }
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand,
+.btn {
+    font-family: var(--fuente-titulos);
+    letter-spacing: 0.3px;
+}
+
+html { scroll-behavior: smooth; }
 
 /* ===== Navbar (Bootstrap + tu paleta) ===== */
 .navbar { background-color: var(--color-primary); }
