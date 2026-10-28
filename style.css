@@ -22,7 +22,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Barlow Condensed;
     background-color: var(--color-bg);
     color: var(--color-text);
 }
